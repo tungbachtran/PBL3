@@ -48,21 +48,24 @@
                         var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
                         foreach (var item in Model)
                         {
-                            <tr>
-                                <td>@i</td>
-                                <td>@item.Code</td>
-                                <td>@item.CustomerName</td>
-                                <td>@item.Phone</td>
-                                <td>@WebBanHangOnline.Common.Common.FormatNumber(item.TotalAmount, 0)</td>
-                                <td>@(item.TypePayment==1?"COD":"Chuyển khoản")</td>
-                                
-                                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
-                                <td>
-                                    <a href="/admin/order/view/@item.Id" class="btn btn-sm btn-success">Xem</a>
-                                    <a href="#" class="btn btn-sm btn-danger btnCapNhat" data-id="@item.Id">Cập nhật</a>
-                                </td>
-                            </tr>
-                            i++;
+                            if (item.CreatedDate.Year == 2024)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.Code</td>
+                                    <td>@item.CustomerName</td>
+                                    <td>@item.Phone</td>
+                                    <td>@WebBanHangOnline.Common.Common.FormatNumber(item.TotalAmount, 0)</td>
+                                    <td>@(item.TypePayment==1?"COD":"Chuyển khoản")</td>
+
+                                    <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                    <td>
+                                        <a href="/admin/order/view/@item.Id" class="btn btn-sm btn-success">Xem</a>
+                                        <a href="#" class="btn btn-sm btn-danger btnCapNhat" data-id="@item.Id">Cập nhật</a>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
                         }
                     }
                 </tbody>

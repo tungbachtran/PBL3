@@ -26,12 +26,14 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                         on o.Id equals od.OrderId
                         join p in db.Products
                         on od.ProductId equals p.Id
+                        where o.CreatedDate.Year == 2024
                         select new
                         {
                             CreatedDate = o.CreatedDate,
                             Quantity = od.Quantity,
-                            Price = od.Price,
-                            OriginalPrice = p.OriginalPrice
+                            Price = p.Price,
+                            OriginalPrice = p.OriginalPrice,
+                            Total = o.TotalAmount
                         };
             if (!string.IsNullOrEmpty(fromDate))
             {
