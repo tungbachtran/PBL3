@@ -306,6 +306,7 @@
     <Content Include="Content\assets\images\desc_1.jpg" />
     <Content Include="Content\assets\images\desc_2.jpg" />
     <Content Include="Content\assets\images\desc_3.jpg" />
+    <Content Include="Content\assets\images\image.jpg" />
     <Content Include="Content\assets\images\main.jpg" />
     <Content Include="Content\assets\images\main2 %281%29.jpg" />
     <Content Include="Content\assets\images\main2.jpg" />
