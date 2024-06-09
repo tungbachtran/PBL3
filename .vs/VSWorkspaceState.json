@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\WebsiteBanhang",
+    "\\WebsiteBanhang\\WebBanHangOnline",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Areas",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Areas\\Admin",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Areas\\Admin\\Controllers",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Areas\\Admin\\Views",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Areas\\Admin\\Views\\Home",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Views",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Views\\Account",
+    "\\WebsiteBanhang\\WebBanHangOnline\\Views\\Shared"
+  ],
+  "SelectedNode": "\\WebsiteBanhang\\WebBanHangOnline\\Areas\\Admin\\Controllers\\ProductsController.cs",
+  "PreviewInSolutionExplorer": false
+}
