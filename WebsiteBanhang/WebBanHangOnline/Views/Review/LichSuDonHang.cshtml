@@ -11,24 +11,38 @@
                 <td>Số điện thoại</td>
                 <td>Địa chỉ</td>
                 <td>Tổng tiền</td>
-                
+                <td>Trạng thái thanh toán</td>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-               
 
+
+                if (item.Status == 1)
+                {
                     <tr>
                         <td>@i</td>
                         <td>@item.CustomerName</td>
                         <td>@item.Phone</td>
                         <td>@item.Address</td>
                         <td>@item.TotalAmount</td>
-                        
+                        <td>Đã thanh toán</td>
                     </tr>
-                
-    
+                }
+                else
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@item.TotalAmount</td>
+                        <td>Chưa thanh toán</td>
+                    </tr>
+                }
+
+
                 i++;
             }
         </tbody>

@@ -94,12 +94,13 @@ namespace WebBanHangOnline.Controllers
                 bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, vnp_HashSecret);
                 if (checkSignature)
                 {
+                    var itemOrder = db.Orders.FirstOrDefault(x => x.Code == orderCode);
                     if (vnp_ResponseCode == "00" && vnp_TransactionStatus == "00")
                     {
-                        var itemOrder = db.Orders.FirstOrDefault(x => x.Code == orderCode);
+                        
                         if (itemOrder != null)
                         {
-                            itemOrder.Status = 2;//đã thanh toán
+                            itemOrder.Status = 1;//đã thanh toán
                             db.Orders.Attach(itemOrder);
                             db.Entry(itemOrder).State = System.Data.Entity.EntityState.Modified;
                             db.SaveChanges();
@@ -110,8 +111,9 @@ namespace WebBanHangOnline.Controllers
                     }
                     else
                     {
+                       
                         //Thanh toan khong thanh cong. Ma loi: vnp_ResponseCode
-                        ViewBag.InnerText = "Có lỗi xảy ra trong quá trình xử lý.Mã lỗi: " + vnp_ResponseCode;
+                        ViewBag.InnerText = "Giao dịch không thành công. Quý khách vui lòng kiểm tra lại";
                         //log.InfoFormat("Thanh toan loi, OrderId={0}, VNPAY TranId={1},ResponseCode={2}", orderId, vnpayTranId, vnp_ResponseCode);
                     }
                     //displayTmnCode.InnerText = "Mã Website (Terminal ID):" + TerminalID;
