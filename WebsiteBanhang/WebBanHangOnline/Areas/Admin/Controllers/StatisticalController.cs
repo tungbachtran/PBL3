@@ -26,7 +26,7 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                         on o.Id equals od.OrderId
                         join p in db.Products
                         on od.ProductId equals p.Id
-                        where o.CreatedDate.Year == 2024
+                        where o.Status == 1
                         select new
                         {
                             CreatedDate = o.CreatedDate,

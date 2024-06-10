@@ -48,8 +48,8 @@
                         var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
                         foreach (var item in Model)
                         {
-                            if (item.CreatedDate.Year == 2024)
-                            {
+
+                            
                                 <tr>
                                     <td>@i</td>
                                     <td>@item.Code</td>
@@ -65,7 +65,8 @@
                                     </td>
                                 </tr>
                                 i++;
-                            }
+                            
+
                         }
                     }
                 </tbody>
@@ -103,7 +104,7 @@
                 <div class="form-group">
                     <label>Trạng thái</label>
                     <select class="form-control" id="ddTrangThai">
-                        <option value="2">
+                        <option value="1">
                             Đã thanh toán
                         </option>
                         

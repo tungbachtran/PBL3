@@ -11,18 +11,24 @@
                 <td>Số điện thoại</td>
                 <td>Địa chỉ</td>
                 <td>Tổng tiền</td>
+                
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@i</td>
-                    <td>@item.CustomerName</td>
-                    <td>@item.Phone</td>
-                    <td>@item.Address</td>
-                    <td>@item.TotalAmount</td>
-                </tr>
+               
+
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@item.TotalAmount</td>
+                        
+                    </tr>
+                
+    
                 i++;
             }
         </tbody>
