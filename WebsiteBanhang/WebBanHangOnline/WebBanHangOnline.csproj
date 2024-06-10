@@ -1436,6 +1436,7 @@
     <Content Include="Content\clients\dist\img\daidien.jpg" />
     <Content Include="Content\clients\dist\img\default-150x150.png" />
     <Content Include="Content\clients\dist\img\icons.png" />
+    <Content Include="Content\clients\dist\img\mainPage.jpg" />
     <Content Include="Content\clients\dist\img\photo1.png" />
     <Content Include="Content\clients\dist\img\photo2.png" />
     <Content Include="Content\clients\dist\img\photo3.jpg" />
@@ -3504,6 +3505,7 @@
     <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Uploads\images\244994762_2380031152133544_4984166604951804110_n.jpg" />
+    <Content Include="Uploads\images\sanpham\test.jpg" />
     <Content Include="Uploads\_thumbs\Images\244994762_2380031152133544_4984166604951804110_n.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
