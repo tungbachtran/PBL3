@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanHangOnline.Models;
+using WebBanHangOnline.Models.EF;
 
 namespace WebBanHangOnline.Controllers
 {
@@ -11,12 +12,23 @@ namespace WebBanHangOnline.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Products
-        public ActionResult Index()
+        public ActionResult Index(int? page, string Searchtext)
         {
-            var items = db.Products.ToList();
-            
-            return View(items);
+            int pageSize = 10;
+            int pageNumber = (page ?? 1); // Default to page 1 if page is null
+
+            IQueryable<Product> items = db.Products.OrderByDescending(x => x.Id);
+
+            if (!string.IsNullOrEmpty(Searchtext))
+            {
+                items = items.Where(x => x.Alias.Contains(Searchtext) || x.Title.Contains(Searchtext));
+            }
+
+            var pagedItems = items.ToList();
+
+            return View(pagedItems);
         }
+
 
         public ActionResult Detail(string alias,int id)
         {
