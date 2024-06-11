@@ -31,9 +31,11 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                         {
                             CreatedDate = o.CreatedDate,
                             Quantity = od.Quantity,
-                            Price = p.Price,
+                            Price = od.Price,
                             OriginalPrice = p.OriginalPrice,
                             Total = o.TotalAmount
+                            
+                           
                         };
             if (!string.IsNullOrEmpty(fromDate))
             {
