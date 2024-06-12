@@ -11,6 +11,7 @@
                 <td>Số điện thoại</td>
                 <td>Địa chỉ</td>
                 <td>Tổng tiền</td>
+                <td>Hình thức thanh toán</td>
                 <td>Trạng thái thanh toán</td>
             </tr>
         </thead>
@@ -19,7 +20,7 @@
             {
 
 
-                if (item.Status == 1)
+                if (item.Status == 1 && item.TypePayment == 1)
                 {
                     <tr>
                         <td>@i</td>
@@ -27,10 +28,11 @@
                         <td>@item.Phone</td>
                         <td>@item.Address</td>
                         <td>@item.TotalAmount</td>
+                        <td>Thanh toán khi nhận hàng</td>
                         <td>Đã thanh toán</td>
                     </tr>
                 }
-                else
+                else if (item.Status == 1 && item.TypePayment == 2)
                 {
                     <tr>
                         <td>@i</td>
@@ -38,6 +40,31 @@
                         <td>@item.Phone</td>
                         <td>@item.Address</td>
                         <td>@item.TotalAmount</td>
+                        <td>Chuyển khoản</td>
+                        <td>Đã thanh toán</td>
+                    </tr>
+                }
+                else if (item.Status == 0 && item.TypePayment == 1)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@item.TotalAmount</td>
+                        <td>Thanh toán khi nhận hàng</td>
+                        <td>Chưa thanh toán</td>
+                    </tr>
+                }
+                else if (item.Status == 0 && item.TypePayment == 2)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@item.TotalAmount</td>
+                        <td>Chuyển khoản</td>
                         <td>Chưa thanh toán</td>
                     </tr>
                 }

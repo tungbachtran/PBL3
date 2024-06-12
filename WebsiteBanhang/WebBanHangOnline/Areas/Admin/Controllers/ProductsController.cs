@@ -120,11 +120,11 @@ namespace WebBanHangOnline.Areas.Admin.Controllers
                     {
                         db.ProductImages.Remove(img);
                     }
-                    db.SaveChanges(); // Save changes after all images are removed
+                    db.SaveChanges();
                 }
 
                 db.Products.Remove(item);
-                db.SaveChanges(); // Save changes after the product is removed
+                db.SaveChanges(); 
                 return Json(new { success = true });
             }
 

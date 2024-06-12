@@ -191,7 +191,7 @@ Sử dụng PagedList để hiển thị và điều hướng danh sách sản p
                     var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?');
                     if (conf === true) {
                         $.ajax({
-                            url: '/admin/news/deleteAll',
+                            url: '/admin/products/delete',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {
